@@ -1,0 +1,40 @@
+p {
+    font-size: 22px;
+    font-family: Helvetica;
+    letter-spacing: 2px;
+    padding-top:15px;
+}
+
+h1 {
+    font-size: 31px;
+    font-family: Helvetica;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 18px;
+    color: peru;
+    font-family: Helvetica;
+    letter-spacing: 5px;
+    padding-bottom: 25px;
+}
+
+.cards-container {
+    padding-top: 15px;
+}
+
+.Profile {
+    text-indent: 2px;
+}
+
+.btn{
+    font-size: 12px;
+    font-family: Helvetica;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+}
+
+.friends-container {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
