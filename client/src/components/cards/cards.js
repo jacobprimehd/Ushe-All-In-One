@@ -1,15 +1,15 @@
 import React from "react";
 import "./cards.css";
 
-function FriendCard(props) {
+function Card(props) {
     return (
 
     <div className="card-container">
                    
                        
-     <h3 className="name"><i class="random name"> </i>John Smith</h3>
-     <h4 className="location"> Seattle, WA </h4>
-     <h5 className="bio"> Mac and Cheese lover. </h5>
+     <h3 className="name"><i class="random name"> </i>{props.username}</h3>
+     <h4 className="location"> {props.city}, {props.state} </h4>
+     <h5 className="bio"> {props.bio} </h5>
 
                  
         
@@ -18,4 +18,4 @@ function FriendCard(props) {
             );
     }
 
-    export default FriendCard;
+    export default Card;

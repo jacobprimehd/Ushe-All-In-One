@@ -31,7 +31,24 @@ export const GET_CURRENT_USER = gql`
   query {
     getCurrentUser{
       username
+      city
+      state
+      allergies
+      bio
     }
   }
 
+`;
+
+
+export const GET_USER_FAV = gql`
+  query($username: String!){
+    getUserFav(username: $username){
+      _id
+      place
+      order
+      username
+    }
+
+  }
 `;

@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home";
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Profile from './pages/Profile/Profile';
+import Feed from './pages/Feed/feed';
 import withSession from './components/withSession/withSession'
 
 import ApolloClient from 'apollo-boost';
@@ -42,7 +43,8 @@ const Root = ({refetch, session}) => (
     <Route exact path="/" component={Home} />
     <Route exact path="/login" render={()=> <Login refetch={refetch}/>} />
     <Route exact path="/register" render={()=> <Register refetch={refetch}/>} />
-    <Route exact path="/Profile" render={()=> <Profile session={session}/>}/>
+    <Route exact path="/profile" render={()=> <Profile session={session}/>}/>
+    <Route exact path="/feed" render={()=> <Feed session={session}/>}/>
     <Redirect to="/" />
     </Switch>
     </Router>

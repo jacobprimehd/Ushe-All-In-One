@@ -1,20 +1,20 @@
-import React, { Component} from "react";
+import React from "react";
 import "./Profile.css";
 import OrderCard from "../../components/ordercards/ordercards";
-import FriendCard from "../../components/cards/cards"
-import UserInfo from './UserInfo'
+import Card from "../../components/cards/cards"
+import UserFav from '../../components/userFavs/userFavs'
+import withAuth from "../../components/withAuth/withAuth";
 
 const Profile = ({session}) => (
         <div className="profile">
-        <UserInfo session={session}/>
         <h1> THE USHE</h1>
-    
+        {console.log(session)}
         <h2> PROFILE </h2>
 
         <div className="profile-section">
         <p> USER INFO </p>
         <div class="friends-container">
-        <FriendCard/>
+        <Card username={session.getCurrentUser.username} city={session.getCurrentUser.city} state={session.getCurrentUser.state} bio={session.getCurrentUser.bio}/>
         </div>
         </div>
 
@@ -23,11 +23,11 @@ const Profile = ({session}) => (
         <button type="button onclick- " className="btn btn-light"> ADD A NEW USHE</button>
        <div class="cards-container">
             
-        <OrderCard/>
+        <UserFav username={session.getCurrentUser.username}/>
         </div>
         </div>
        
         </div>
 )
 
-export default Profile;
+export default withAuth(session => session && session.getCurrentUser)(Profile);
