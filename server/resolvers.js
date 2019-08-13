@@ -22,7 +22,13 @@ exports.resolvers = {
               model: 'Fav'
             });
             return user;
-          }
+          },
+          getUserFav: async (root, { username },{Fav}) => {
+            const userFav = await Fav.find({username}).sort({
+              createdDate: 'desc'
+            });
+            return userFav;
+          },
     },
     Mutation: {
         addFav: async (
