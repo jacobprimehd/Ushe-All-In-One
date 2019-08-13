@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import Card from "../../components/ordercards/ordercards"
 import "./home.css";
 
 
 class Home extends Component {
-  state = {
-    allFavs: []
-  }
   componentDidMount() {
     document.body.classList.add("background");
   }

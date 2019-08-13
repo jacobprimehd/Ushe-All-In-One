@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import GlobalOrder from "../../components/globalorder/globalorder";
 import Title from "../../components/title/title";
 import NavBar from "../../components/navbar/navbar";

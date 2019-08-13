@@ -1,11 +1,11 @@
 import React from "react";
 import "./Profile.css";
-import OrderCard from "../../components/ordercards/ordercards";
 import Card from "../../components/cards/cards"
 import UserFav from '../../components/userFavs/userFavs'
 import withAuth from "../../components/withAuth/withAuth";
 
-const Profile = ({session}) => (
+const Profile = ({session}) => {
+        return (
         <div className="profile">
         <h1> THE USHE</h1>
         <h2> PROFILE </h2>
@@ -23,7 +23,7 @@ const Profile = ({session}) => (
         </div>
         </div>
        
-        </div>
-)
+        </div>)
+}
 
 export default withAuth(session => session && session.getCurrentUser)(Profile);
