@@ -4,6 +4,7 @@ import Card from "../../components/cards/cards";
 import UserFav from "../../components/userFavs/userFavs";
 import Modal from "../../components/modal/modal";
 import withAuth from "../../components/withAuth/withAuth";
+import Navbar from '../../components/navbar/navbar'
 import { ADD_FAV } from "../../queries/index";
 import { Mutation } from "react-apollo";
 import Error from '../../components/Error/error'
@@ -31,7 +32,6 @@ class Profile extends Component {
   };
 
   handleSubmit = (event,addFav) => {
-    event.preventDefault();
     addFav().then(({data}) =>{
         console.log(data)
     })
@@ -47,6 +47,7 @@ class Profile extends Component {
     const { session, username, order, place } = this.state;
     return (
       <div>
+        <Navbar/>
         <h1> THE USHE</h1>
         <h2> PROFILE </h2>
 

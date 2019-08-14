@@ -46,8 +46,8 @@ class Register extends Component {
   };
 
   validateForm = () => {
-    const { email, password, username, city, state, allergies, bio } = this.state;
-    const isInvalid = !email || !password || !username || !city || !state || !allergies || !bio
+    const { email, password, username, city, state, bio } = this.state;
+    const isInvalid = !email || !password || !username || !city || !state || !bio
     return isInvalid
   }
 
