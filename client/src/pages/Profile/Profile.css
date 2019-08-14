@@ -5,10 +5,40 @@ p {
     padding-top:15px;
 }
 
-h1 {
-    font-size: 31px;
+.cards-container{
+    padding-bottom: 20px;
+}
+
+.label {
+    font-size: 17px;
     font-family: Helvetica;
-    letter-spacing: 3px;
+    letter-spacing: 0px;
+    font-weight: 0px;
+}
+
+.modal-btn {
+
+width: 160px;
+  height: 25px;
+  background: linear-gradient(to bottom, whitesmoke 0%, tan 100%); /* W3C */
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  color: black;
+  font-weight: 200;
+  font-family: Helvetica;
+  font-size: 15px;
+  text-align: center;
+  text-indent: 5px;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
+.form-input {
+    font-size: 14px;
+    font-family: Helvetica;
+    text-transform: uppercase; 
 }
 
 h2 {

@@ -20,13 +20,13 @@
 
 
 .btn-cancel {
-    font-size: 7px;
+    font-size: 14px;
     font-family: Helvetica;
     text-transform: uppercase; 
 }
 
 .btn-continue {
-    font-size: 7px;
+    font-size: 14px;
     font-family: Helvetica;
     text-transform: uppercase; 
 }
@@ -51,6 +51,10 @@
     background: peru;
     height: 35px;
     padding: 15px;
+}
+
+.close-modal-btn{
+    font-size: 200%;
 }
 
 .close-modal-btn:hover {

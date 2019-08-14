@@ -16,6 +16,7 @@ import withSession from './components/withSession/withSession'
 
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import profileSearch from './pages/Profile/profileSearch';
 
 const client = new ApolloClient({
     uri: "http://localhost:4444/graphql",
@@ -44,6 +45,7 @@ const Root = ({refetch, session}) => (
     <Route exact path="/login" render={()=> <Login refetch={refetch}/>} />
     <Route exact path="/register" render={()=> <Register refetch={refetch}/>} />
     <Route exact path="/profile" render={()=> <Profile session={session}/>}/>
+    <Route path="/profiles/:username" component={profileSearch}/>
     <Route exact path="/feed" render={()=> <Feed session={session}/>}/>
     <Redirect to="/" />
     </Switch>

@@ -1,5 +1,19 @@
 import { gql } from "apollo-boost";
 
+export const ADD_FAV = gql`
+mutation($place: String!, $order: String!, $username: String!){
+  addFav(place: $place,order: $order, username: $username){
+    place
+    order
+    createdDate
+    username
+  }
+}
+
+`;
+
+
+
 export const GET_ALL_FAVS = gql`
   query {
     getAllFavs {
@@ -30,6 +44,7 @@ mutation($username: String!, $password: String!){
 export const GET_CURRENT_USER = gql`
   query {
     getCurrentUser{
+      _id
       username
       city
       state
@@ -50,5 +65,18 @@ export const GET_USER_FAV = gql`
       username
     }
 
+  }
+`;
+
+export const GET_USER_INFO = gql`
+  query($username: String!){
+    getUserInfo(username: $username){
+      _id
+      username
+      city
+      state
+      allergies
+      bio
+    }
   }
 `;

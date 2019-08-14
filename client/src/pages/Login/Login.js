@@ -32,11 +32,6 @@ class Login extends Component {
       this.props.history.push('/profile')
     });
   };
-  handleChange = event => {
-    const { name, value } = event.target
-    console.log(name, ":", value)
-    this.setState({[name]: value})
-  }
 
   validateForm = () => {
     const { username, password } = this.state;
@@ -58,8 +53,8 @@ class Login extends Component {
 
           return (
             <form className="form" onSubmit={event => this.handleSubmit(event,signinUser)}>
-            <input type="text" name="username" palceholder="Email" onChange={this.handleChange} value={username}/>
-            <input type="password" name="password" palceholder="Password" onChange={this.handleChange} value={password}/>
+            <input type="text" name="username" palceholder="Username" onChange={e => this.setState({ username: e.target.value })} value={username}/>
+            <input type="password" name="password" palceholder="Password" onChange={e => this.setState({ password: e.target.value })} value={password}/>
             <button type="submit" disabled={loading || this.validateForm()}>submit</button>
             {error&&<Error error={error}/>}
             </form>

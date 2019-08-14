@@ -29,6 +29,13 @@ exports.resolvers = {
             });
             return userFav;
           },
+          getUserInfo: async (root, {username}, {User}) => {
+            if(!username){
+              return null;
+            }
+            const user = await User.find({username})
+            return user;
+          }
     },
     Mutation: {
         addFav: async (

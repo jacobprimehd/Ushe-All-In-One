@@ -25,6 +25,7 @@ type Query {
   getAllFavs: [Fav]
   getCurrentUser: User
   getUserFav(username: String!): [Fav]
+  getUserInfo(username: String!): [User]
 }
 
 type Token {
