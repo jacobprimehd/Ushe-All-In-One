@@ -9,7 +9,7 @@ const createToken = (user, secret, expiresIn) => {
 exports.resolvers = {
     Query: {
         getAllFavs: async (root, args, { Fav }) => {
-            const allFavs = await Fav.find();
+            const allFavs = await Fav.find().sort({createdDate: "desc"});
             return allFavs;
           },
           getCurrentUser: async(root, args, {currentUser, User}) => {
@@ -27,7 +27,7 @@ exports.resolvers = {
             const userFav = await Fav.find({username}).sort({
               createdDate: 'desc'
             });
-            return userFav;
+            return userFav; 
           },
           getUserInfo: async (root, {username}, {User}) => {
             if(!username){
