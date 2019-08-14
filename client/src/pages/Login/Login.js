@@ -15,7 +15,7 @@ class Login extends Component {
   state = {...initialState};
 
   componentDidMount() {
-    document.body.classList.add("background-login");
+    document.body.classList.add("background-register");
   }
 
   clearState = () => {
@@ -42,26 +42,43 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="container">
-        <div className="align-items-center">
-          <h1>
-            <span className="fa fa-sign-in" /> Login
-          </h1>
-        </div>
+      <div className="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+      <div className="wrapper wrapper--w680">
+        <div className="card card-4">
+          <div className="card-body">
+            <h2 className="title">Login</h2>
         <Mutation mutation={SIGNIN_USER} variables={{username, password}}>
         {(signinUser, {data,loading,error}) => {
 
           return (
             <form className="form" onSubmit={event => this.handleSubmit(event,signinUser)}>
-            <input type="text" name="username" palceholder="Username" onChange={e => this.setState({ username: e.target.value })} value={username}/>
-            <input type="password" name="password" palceholder="Password" onChange={e => this.setState({ password: e.target.value })} value={password}/>
-            <button type="submit" disabled={loading || this.validateForm()}>submit</button>
-            {error&&<Error error={error}/>}
-            </form>
+            <div className="row row-space">
+              <div className="col-6">
+                <div className="input-group">
+                  <label className="label">Username</label>
+                  <input className="input--style-4" type="text" name="username" onChange={e => this.setState({ username: e.target.value })} value={username} />
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="input-group">
+                  <label className="label">Password</label>
+                  <input className="input--style-4" type="password" name="password" onChange={e => this.setState({ password: e.target.value })} value={password} />
+                </div>
+              </div>
+            </div>
+           
+            <div className="p-t-15">
+              <button className="btn btn--radius-2 btn--blue" type="submit"  disabled={loading || this.validateForm()}>Submit</button>
+            </div>
+            {error&&<Error error={error}/>} 
+          </form>
           )
         }}
       </Mutation>  
       </div>
+      </div>
+    </div>
+    </div>
     );
   }
 }
