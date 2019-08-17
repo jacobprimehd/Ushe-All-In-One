@@ -19,7 +19,7 @@ import { ApolloProvider } from 'react-apollo';
 import profileSearch from './pages/Profile/profileSearch';
 
 const client = new ApolloClient({
-    uri: "http://localhost:4444/graphql",
+    uri: "https://the-ushe-server.herokuapp.com/graphql",
     fetchOptions: {
         credentials: 'include'
     },
